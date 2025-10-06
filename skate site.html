@@ -1,0 +1,147 @@
+index.html.
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Session Streetwear — Skates & Roupas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f3f3f3; --card:#ffffff; --accent:#9d4edd; --accent-dark:#5a189a; --muted:#555; --glass: rgba(0,0,0,0.04);
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg); color:#111}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--container);margin:0 auto;padding:28px}/* NAV */
+header{background:#fff;border-radius:12px;padding:12px;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+.nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.brand img{height:60px}
+nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+.cta{background:var(--accent);padding:10px 14px;border-radius:10px;font-weight:700;color:#fff}
+
+/* HERO */
+.hero{display:flex;gap:28px;align-items:center;padding:28px;border-radius:12px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:22px}
+.hero-left{flex:1}
+.hero h1{font-size:40px;margin:0 0 8px;color:var(--accent-dark)}
+.hero p{margin:0 0 16px;color:var(--muted)}
+.hero .actions{display:flex;gap:12px}
+
+/* PRODUCTS */
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(0,0,0,0.05);box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+.price{font-weight:700;color:var(--accent-dark)}
+.muted{color:var(--muted);font-size:14px}
+.btn{display:inline-block;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn-ghost{border:1px solid rgba(0,0,0,0.1);background:transparent}
+.btn-primary{background:var(--accent);color:#fff}
+
+/* CART */
+.cart-btn{position:fixed;right:20px;bottom:20px;background:var(--accent);border:none;padding:14px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,0.15);cursor:pointer;color:#fff;font-size:18px}
+.cart-count{background:#fff;color:var(--accent-dark);padding:4px 8px;border-radius:999px;margin-left:8px;font-weight:700}
+
+/* FOOTER */
+footer{margin-top:28px;padding:18px;border-radius:12px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.05);display:flex;justify-content:space-between;align-items:center}
+
+/* RESPONSIVE */
+@media (max-width:760px){
+  .hero{flex-direction:column;text-align:center}
+  .nav{flex-direction:column;align-items:flex-start}
+  .brand{margin-bottom:8px}
+}
+
+.badge{background:var(--accent);padding:6px 8px;border-radius:999px;font-weight:700;color:#fff}
+.search{padding:10px;border-radius:10px;background:#f8f8f8;border:1px solid rgba(0,0,0,0.05);width:260px}
+.hero-visual{width:320px;height:220px;border-radius:12px;background:#f7f7f7;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.08)}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <img src="logo.png" alt="Session Streetwear Logo">
+        </div><nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a class="cta" href="#loja">Compre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Session Streetwear — Skate é estilo e atitude</h1>
+    <p class="muted">Skates prontos, roupas descoladas e acessórios para quem vive a cena do street. Frete para todo o Brasil.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#produtos">Ver produtos</a>
+      <a class="btn btn-ghost" href="#sobre">Nossa história</a>
+    </div>
+    <div style="margin-top:14px" class="muted">Aberto: Seg–Sáb, 09:00–19:00</div>
+  </div>
+  <div class="hero-visual">
+    <img src="logo.png" alt="Logo Session Streetwear" style="max-width:100%;max-height:100%">
+  </div>
+</section>
+
+<section id="produtos">
+  <div class="section-title">
+    <h2 style="color:var(--accent-dark)">Produtos em destaque</h2>
+    <div style="display:flex;gap:12px;align-items:center">
+      <input class="search" placeholder="Buscar...">
+      <div class="badge">Promoções</div>
+    </div>
+  </div>
+
+  <div class="grid" id="products-grid">
+  </div>
+</section>
+
+<section id="sobre" style="margin-top:18px">
+  <h2 style="color:var(--accent-dark)">Sobre a Session</h2>
+  <p class="muted">Criada por skatistas, para skatistas. Nossa missão é oferecer equipamentos confiáveis e roupas com design pensado na rua. Trabalhamos com shapes de madeira canadense, rolamentos ABEC altos e colaborações com artistas locais.</p>
+</section>
+
+<section id="contato" style="margin-top:18px">
+  <h2 style="color:var(--accent-dark)">Contato</h2>
+  <div class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <div style="flex:1;min-width:260px">
+      <form id="contact-form">
+        <div style="margin-bottom:8px"><label class="muted">Nome</label><br><input required name="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.1);background:transparent;color:inherit"></div>
+        <div style="margin-bottom:8px"><label class="muted">Email</label><br><input required name="email" type="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.1);background:transparent;color:inherit"></div>
+        <div style="margin-bottom:8px"><label class="muted">Mensagem</label><br><textarea required name="msg" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.1);background:transparent;color:inherit"></textarea></div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </form>
+    </div>
+    <div style="min-width:240px">
+      <div class="muted">Endereço</div>
+      <div>Rua do Skate, 123 — Centro</div>
+      <div style="margin-top:8px" class="muted">Telefone</div>
+      <div>(11) 98765-4321</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div style="font-weight:800;color:var(--accent-dark)">Session Streetwear</div>
+    <div class="muted">© <span id="year"></span> • Feito com skate e café</div>
+  </div>
+  <div class="muted">Siga-nos: Instagram • TikTok • YouTube</div>
+</footer>
+
+  </div><button class="cart-btn" id="open-cart" title="Abrir carrinho">🛒 <span class="cart-count" id="cart-count">0</span></button>
+
+  <!-- resto do script e template permanece igual -->  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script></body>
+</html>
